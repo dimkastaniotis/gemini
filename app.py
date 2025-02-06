@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import random
-import os
 from datetime import datetime
+import os  # Εισαγωγή της βιβλιοθήκης os
 
 app = Flask(__name__)
 
@@ -27,8 +27,6 @@ python_tips = [
 def get_random_fact():
     return random.choice(facts)
 
-def get_python_tip():
-    return random.choice(python_tips)
 # Συνάρτηση για να επιλέγει ένα τυχαίο tip
 def get_python_tip():
     random.seed(datetime.now().day)
