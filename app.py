@@ -1,20 +1,48 @@
 from flask import Flask, jsonify
 import random
+from datetime import datetime
 
 app = Flask(__name__)
 
-# Λίστα με αποφθέγματα
-quotes = [
-    "Το μόνο αδύνατο είναι αυτό που δεν προσπάθησες.",
-    "Η μάθηση είναι το μοναδικό όπλο που δεν μπορεί να αφαιρεθεί.",
-    # ... Πρόσθεσε περισσότερα αποφθέγματα
+# Λίστα με τυχαία facts
+facts = [
+    "Το 70% της Γης καλύπτεται από νερό.",
+    "Οι καρχαρίες υπάρχουν πριν από τους δεινόσαυρους.",
+    "Το μέσο όρο του ανθρώπινου εγκεφάλου ζυγίζει περίπου 1.4 κιλά.",
+    "Το αλφάβητο της Χαβάης έχει μόνο 12 γράμματα.",
+    "Το φως του ήλιου χρειάζεται 8 λεπτά και 20 δευτερόλεπτα για να φτάσει στη Γη."
 ]
 
-@app.route('/quote')
-def get_quote():
-    # Επιλογή τυχαίου αποφθέγματος
-    random_quote = random.choice(quotes)
-    return jsonify({'quote': random_quote})
+# Λίστα με Python tips
+python_tips = [
+    "Χρησιμοποίησε τις λίστες (lists) για να αποθηκεύσεις πολλαπλά στοιχεία.",
+    "Το `f-string` είναι ένας εύκολος τρόπος για να διαμορφώσεις strings.",
+    "Χρησιμοποίησε τη συνάρτηση `enumerate()` για να πάρεις και το index και το value σε ένα loop.",
+    "Το `zip()` σου επιτρέπει να συνδυάσεις πολλαπλές λίστες.",
+    "Χρησιμοποίησε το `with` για να ανοίγεις αρχεία και να είσαι σίγουρος ότι θα κλείσουν σωστά."
+]
 
-if __name__ == '__main__':
+# Συνάρτηση για να επιλέγει ένα τυχαίο fact
+def get_random_fact():
+    random.seed(datetime.now().day)
+    return random.choice(facts)
+
+# Συνάρτηση για να επιλέγει ένα τυχαίο tip
+def get_python_tip():
+    random.seed(datetime.now().day)
+    return random.choice(python_tips)
+
+# Διαδρομή για τυχαίο fact
+@app.route("/api/fact", methods=["GET"])
+def random_fact():
+    fact = get_random_fact()
+    return jsonify({"fact": fact})
+
+# Διαδρομή για τυχαίο Python tip
+@app.route("/api/tip", methods=["GET"])
+def python_tip():
+    tip = get_python_tip()
+    return jsonify({"tip": tip})
+
+if __name__ == "__main__":
     app.run(debug=True)
