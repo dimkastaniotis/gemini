@@ -7,20 +7,19 @@ app = Flask(__name__)
 
 # Λίστα με τυχαία facts
 facts = [
-    "Το 70% της Γης καλύπτεται από νερό.",
-    "Οι καρχαρίες υπάρχουν πριν από τους δεινόσαυρους.",
-    "Το μέσο όρο του ανθρώπινου εγκεφάλου ζυγίζει περίπου 1.4 κιλά.",
-    "Το αλφάβητο της Χαβάης έχει μόνο 12 γράμματα.",
-    "Το φως του ήλιου χρειάζεται 8 λεπτά και 20 δευτερόλεπτα για να φτάσει στη Γη."
+    "70% of the Earth is covered by water.",
+    "Sharks have existed before dinosaurs.",
+    "The average human brain weighs about 1.4 kilograms.",
+    "The Hawaiian alphabet only has 12 letters.",
+    "Sunlight takes 8 minutes and 20 seconds to reach Earth."
+
 ]
 
 # Λίστα με Python tips
 python_tips = [
-    "Χρησιμοποίησε τις λίστες (lists) για να αποθηκεύσεις πολλαπλά στοιχεία.",
-    "Το `f-string` είναι ένας εύκολος τρόπος για να διαμορφώσεις strings.",
-    "Χρησιμοποίησε τη συνάρτηση `enumerate()` για να πάρεις και το index και το value σε ένα loop.",
-    "Το `zip()` σου επιτρέπει να συνδυάσεις πολλαπλές λίστες.",
-    "Χρησιμοποίησε το `with` για να ανοίγεις αρχεία και να είσαι σίγουρος ότι θα κλείσουν σωστά."
+    "(lists) olalal",
+    "to  `f-string` einai kalo",
+    
 ]
 
 # Συνάρτηση για να επιλέγει ένα τυχαίο fact
